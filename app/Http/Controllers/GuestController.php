@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Testimonial;
+use App\Models\Products;
 
 class GuestController extends Controller
 {
@@ -165,128 +167,98 @@ class GuestController extends Controller
         $pruductsHeading = 'Our Products';
         $productSectionDescription = 'We offer wide range of international simcards and data packages that are available to ensure seamless connectivity across different countries and regions. Our company also offers 24/7 customer support to assist users with any technical issues or inquiries they may have';
 
-        $products = [
-            [
-                'image' => asset('images/icons/customer-service.svg'),
-                'product-type' => 'WORLDWIDE POCKET WIFI',
-                'product-name' => 'Pokefi',
-                'product-details' => [
-                    'FREE 5GB (No expiry)',
-                    'FREE you from changing sim hassles',
-                    'Worldwide Coverage (100+ countries)',
-                    'Easy & Ready to use',
-                ],
-                'reaload' => 'RE-LOADABLE',
-                'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-                'price' => 299
-            ],
-            [
-                'image' => asset('images/icons/customer-service.svg'),
-                'product-type' => 'WORLDWIDE POCKET WIFI',
-                'product-name' => 'Pokefi',
-                'product-details' => [
-                    'FREE 5GB (No expiry)',
-                    'FREE you from changing sim hassles',
-                    'Worldwide Coverage (100+ countries)',
-                    'Easy & Ready to use',
-                ],
-                'reaload' => 'RE-LOADABLE',
-                'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-                'price' => 299
-            ],
-            [
-                'image' => asset('images/icons/customer-service.svg'),
-                'product-type' => 'WORLDWIDE POCKET WIFI',
-                'product-name' => 'Pokefi',
-                'product-details' => [
-                    'FREE 5GB (No expiry)',
-                    'FREE you from changing sim hassles',
-                    'Worldwide Coverage (100+ countries)',
-                    'Easy & Ready to use',
-                ],
-                'reaload' => 'RE-LOADABLE',
-                'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-                'price' => 299
-            ],
-            [
-                'image' => asset('images/icons/customer-service.svg'),
-                'product-type' => 'WORLDWIDE POCKET WIFI',
-                'product-name' => 'Pokefi',
-                'product-details' => [
-                    'FREE 5GB (No expiry)',
-                    'FREE you from changing sim hassles',
-                    'Worldwide Coverage (100+ countries)',
-                    'Easy & Ready to use',
-                ],
-                'reaload' => 'RE-LOADABLE',
-                'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-                'price' => 299
-            ],
-            [
-                'image' => asset('images/icons/customer-service.svg'),
-                'product-type' => 'WORLDWIDE POCKET WIFI',
-                'product-name' => 'Pokefi',
-                'product-details' => [
-                    'FREE 5GB (No expiry)',
-                    'FREE you from changing sim hassles',
-                    'Worldwide Coverage (100+ countries)',
-                    'Easy & Ready to use',
-                ],
-                'reaload' => 'RE-LOADABLE',
-                'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-                'price' => 299
-            ],
-            [
-                'image' => asset('images/icons/customer-service.svg'),
-                'product-type' => 'WORLDWIDE POCKET WIFI',
-                'product-name' => 'Pokefi',
-                'product-details' => [
-                    'FREE 5GB (No expiry)',
-                    'FREE you from changing sim hassles',
-                    'Worldwide Coverage (100+ countries)',
-                    'Easy & Ready to use',
-                ],
-                'reaload' => 'RE-LOADABLE',
-                'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-                'price' => 299
-            ],
+        $products = Products::get();
+        // $products = [
+        //     [
+        //         'image' => asset('images/icons/customer-service.svg'),
+        //         'product-type' => 'WORLDWIDE POCKET WIFI',
+        //         'product-name' => 'Pokefi',
+        //         'product-details' => [
+        //             'FREE 5GB (No expiry)',
+        //             'FREE you from changing sim hassles',
+        //             'Worldwide Coverage (100+ countries)',
+        //             'Easy & Ready to use',
+        //         ],
+        //         'reaload' => 'RE-LOADABLE',
+        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
+        //         'price' => 299
+        //     ],
+        //     [
+        //         'image' => asset('images/icons/customer-service.svg'),
+        //         'product-type' => 'WORLDWIDE POCKET WIFI',
+        //         'product-name' => 'Pokefi',
+        //         'product-details' => [
+        //             'FREE 5GB (No expiry)',
+        //             'FREE you from changing sim hassles',
+        //             'Worldwide Coverage (100+ countries)',
+        //             'Easy & Ready to use',
+        //         ],
+        //         'reaload' => 'RE-LOADABLE',
+        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
+        //         'price' => 299
+        //     ],
+        //     [
+        //         'image' => asset('images/icons/customer-service.svg'),
+        //         'product-type' => 'WORLDWIDE POCKET WIFI',
+        //         'product-name' => 'Pokefi',
+        //         'product-details' => [
+        //             'FREE 5GB (No expiry)',
+        //             'FREE you from changing sim hassles',
+        //             'Worldwide Coverage (100+ countries)',
+        //             'Easy & Ready to use',
+        //         ],
+        //         'reaload' => 'RE-LOADABLE',
+        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
+        //         'price' => 299
+        //     ],
+        //     [
+        //         'image' => asset('images/icons/customer-service.svg'),
+        //         'product-type' => 'WORLDWIDE POCKET WIFI',
+        //         'product-name' => 'Pokefi',
+        //         'product-details' => [
+        //             'FREE 5GB (No expiry)',
+        //             'FREE you from changing sim hassles',
+        //             'Worldwide Coverage (100+ countries)',
+        //             'Easy & Ready to use',
+        //         ],
+        //         'reaload' => 'RE-LOADABLE',
+        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
+        //         'price' => 299
+        //     ],
+        //     [
+        //         'image' => asset('images/icons/customer-service.svg'),
+        //         'product-type' => 'WORLDWIDE POCKET WIFI',
+        //         'product-name' => 'Pokefi',
+        //         'product-details' => [
+        //             'FREE 5GB (No expiry)',
+        //             'FREE you from changing sim hassles',
+        //             'Worldwide Coverage (100+ countries)',
+        //             'Easy & Ready to use',
+        //         ],
+        //         'reaload' => 'RE-LOADABLE',
+        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
+        //         'price' => 299
+        //     ],
+        //     [
+        //         'image' => asset('images/icons/customer-service.svg'),
+        //         'product-type' => 'WORLDWIDE POCKET WIFI',
+        //         'product-name' => 'Pokefi',
+        //         'product-details' => [
+        //             'FREE 5GB (No expiry)',
+        //             'FREE you from changing sim hassles',
+        //             'Worldwide Coverage (100+ countries)',
+        //             'Easy & Ready to use',
+        //         ],
+        //         'reaload' => 'RE-LOADABLE',
+        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
+        //         'price' => 299
+        //     ],
 
-        ];
+        // ];
 
         $testimonialHeading = 'Our Clients';
 
-        $testimonials = [
-            [
-                'image' => asset('images/testimonial/client1.png'),
-                'name' => 'Jhon doe',
-                'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
-                'rating' => 5
-            ],
-            [
-                'image' => asset('images/testimonial/client1.png'),
-                'name' => 'Jhon doe',
-                'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
-                'rating' => 5
-            ],
-            [
-                'image' => asset('images/testimonial/client1.png'),
-                'name' => 'Jhon doe',
-                'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
-                'rating' => 5
-            ],
-            [
-                'image' => asset('images/testimonial/client1.png'),
-                'name' => 'Jhon doe',
-                'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
-                'rating' => 5
-            ],
-            [
-                'image' => asset('images/testimonial/client1.png'),
-                'name' => 'Jhon doe',
-                'message' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud',
-                'rating' => 5
-            ],
-        ];
+        $testimonials = Testimonial::get();
 
         view()->share([
             'iconData' => $iconData,

@@ -23,21 +23,35 @@ class ProductsResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                ->required()
-                ->maxLength(255),
-                Forms\Components\TextInput::make('description')
-                ->required()
-                ->maxLength(255),
-                Forms\Components\TextInput::make('price')
-                ->numeric()
-                ->required(),
-                Forms\Components\TextInput::make('shoppe')
-                ->required()
-                ->maxLength(255),
-                Forms\Components\TextInput::make('lazada')
-                ->required()
-                ->maxLength(255),
+                Forms\Components\Grid::make()
+                ->schema([
+                    Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                    Forms\Components\FileUpload::make('image')
+                    ->required()
+                    ->preserveFilenames()
+                    ->image(),
+                    Forms\Components\Select::make('type')
+                    ->options([
+                        'Pocket Wifi' => 'Pocket Wifi',
+                        'Sim cards' => 'Sim cards',
+                        'Top Up/load' => 'Top up/load',
+                    ]),
+                    
+                    Forms\Components\TextInput::make('price')
+                    ->numeric()
+                    ->required(),
+                    Forms\Components\TextInput::make('shopUrl')
+                    ->required()
+                    ->maxLength(255),
+                    Forms\Components\Toggle::make('isReaload'),
+                ])->columns(3),
+                Forms\Components\Grid::make()
+                ->schema([
+                    Forms\Components\RichEditor::make('details'),
+                ])->columns(1),
+                
             ]);
     }
 
@@ -70,8 +84,8 @@ class ProductsResource extends Resource
     {
         return [
             'index' => Pages\ListProducts::route('/'),
-            //'create' => Pages\CreateProducts::route('/create'),
-            //'edit' => Pages\EditProducts::route('/{record}/edit'),
+            'create' => Pages\CreateProducts::route('/create'),
+            'edit' => Pages\EditProducts::route('/{record}/edit'),
         ];
     }    
 }
