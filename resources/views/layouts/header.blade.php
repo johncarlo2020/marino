@@ -11,7 +11,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="{{route('home')}}">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo" width="33" >
                 <span class="ml-2 d-block">{{$companyName}}</span>
             </a>

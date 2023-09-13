@@ -26,6 +26,16 @@ class GuestController extends Controller
         return view('products');
     }
 
+    public function clients() {
+        $this->sharedData();
+        return view('clients');
+    }
+
+    public function contact() {
+        $this->sharedData();
+        return view('contact');
+    }
+
     public function sharedData()
     {
         //to-do replace this data base on admin
@@ -70,22 +80,12 @@ class GuestController extends Controller
                 ],
             ],
             [
-                'linkUrl' => '#',
-                'page' => 'Promotions',
-                'child' => false,
-            ],
-            [
-                'linkUrl' => '#',
-                'page' => 'Top up offer',
-                'child' => false,
-            ],
-            [
-                'linkUrl' => '#',
+                'linkUrl' => route('contact'),
                 'page' => 'Contact us',
                 'child' => false,
             ],
             [
-                'linkUrl' => '#',
+                'linkUrl' => route('clients'),
                 'page' => 'Our Clients',
                 'child' => false,
             ],
@@ -387,8 +387,61 @@ class GuestController extends Controller
 
                 ],
 
-
             ];
+
+            $ourClientHeading = 'What our client says?';
+            $ourClientHeadingDescription = 'We are very fortunate to have formed excellent partnerships with many of our clients. And we’ve formed more than just working relationships with them; we have formed true friendships. Here’s what they’re saying about us.';
+
+            $testimonialList2 = [
+                [
+                    'name' => 'Capt. KimSeowon',
+                    'position' => 'Korean Captain from Pan Ocean',
+                    'rating' => 4,
+                    'message' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet',
+                    'image' => asset('images/products.png')
+                ] ,
+                [
+                    'name' => 'Capt. KimSeowon',
+                    'position' => 'Korean Captain from Pan Ocean',
+                    'rating' => 4,
+                    'message' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet',
+                    'image' => asset('images/products.png')
+                ] ,
+                [
+                    'name' => 'Capt. KimSeowon',
+                    'position' => 'Korean Captain from Pan Ocean',
+                    'rating' => 4,
+                    'message' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet',
+                    'image' => asset('images/products.png')
+                ] ,
+                [
+                    'name' => 'Capt. KimSeowon',
+                    'position' => 'Korean Captain from Pan Ocean',
+                    'rating' => 4,
+                    'message' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet',
+                    'image' => asset('images/products.png')
+                ] ,
+                [
+                    'name' => 'Capt. KimSeowon',
+                    'position' => 'Korean Captain from Pan Ocean',
+                    'rating' => 4,
+                    'message' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet',
+                    'image' => asset('images/products.png')
+                ] ,
+            ];
+
+            $contactHeading = 'Contact us';
+            $contactHeadingDescription = '';
+            $contactUsImg = asset('images/emailpic.png');
+            $contactContent1 = [
+                'title' => 'Have questions? Shoot us an email.',
+                'content' => [
+                    [
+                        'text' => 'By establishing partnerships with major network providers globally, our company aims to create a comprehensive service that offers reliable and high-speed internet access to seafarers and travelers, enabling them to stay connected with their loved ones and access important information while on the go. This initiative not only caters to the growing demand for connectivity at sea and in remote areas but also positions us as a leading player in providing data sim cards worldwide.'
+                    ],
+                ]
+            ];
+
 
         view()->share([
             'iconData' => $iconData,
@@ -411,7 +464,14 @@ class GuestController extends Controller
             'ourBrands' => $ourBrands,
             'aboutUsContent2' => $aboutUsContent2,
             'brands' => $brands,
-            'productsList' => $productsList
+            'productsList' => $productsList,
+            'ourClientHeading' => $ourClientHeading,
+            'ourClientHeadingDescription' => $ourClientHeadingDescription,
+            'testimonialList2' => $testimonialList2,
+            'contactHeading' => $contactHeading,
+            'contactHeadingDescription' => $contactHeadingDescription,
+            'contactContent1' => $contactContent1,
+            'contactUsImg' => $contactUsImg
         ]);
 
     }

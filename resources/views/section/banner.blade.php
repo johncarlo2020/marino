@@ -14,7 +14,7 @@
             </div>
             <div class="col-12 col-lg-6 col-md-12">
                 <div class="button-wrap">
-                    <a href="" class="btn custom-btn gold">
+                    <a href="{{route('products')}}" class="btn custom-btn gold">
                         {{ $learnMoreText }}
                     </a>
                 </div>
