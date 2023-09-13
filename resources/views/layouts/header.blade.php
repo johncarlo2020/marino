@@ -12,7 +12,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <img src="{{ asset('images/icons/logowhite.svg') }}" alt="Logo" width="33" >
+                <img src="{{ asset('images/logo.png') }}" alt="Logo" width="33" >
                 <span class="ml-2 d-block">{{$companyName}}</span>
             </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

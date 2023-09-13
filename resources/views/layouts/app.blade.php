@@ -22,7 +22,7 @@
     </head>
     <body>
         @include('layouts.header')
-        <main>
+        <main class="mt-5">
             @yield('content')
         </main>
         @include('layouts.footer')

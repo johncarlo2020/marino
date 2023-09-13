@@ -10,23 +10,24 @@
         @foreach ($products as $product)
         <div class="card border ">
             <img src="{{asset('storage/'.$product['image'])}}" width="80">
-            
             <div class="details">
                 <p class="product-type">{{ $product['type'] }}</p>
                 <p class="product-name">{{ $product['name'] }}</p>
                 <div class="product-description">
                     {!! $product['details'] !!}
-                   
+
                 </div>
-                <p class="price">&#x20B1;{{ $product['price'] }} only</p>
-                <p class="reloadable">
-                    @if($product['isReaload'] == 1)
-                    RE-LOADABLE
-                    @endif
-                </p>
-                <a href="{{ $product['shopUrl'] }}" class="btn custom-btn dark-blue w-100">
-                    {{ $buyNowText }}
-                </a>
+                <div class="bottom">
+                    <p class="price">&#x20B1;{{ $product['price'] }} only</p>
+                    <p class="reloadable">
+                        @if($product['isReaload'] == 1)
+                        RE-LOADABLE
+                        @endif
+                    </p>
+                    <a href="{{ $product['shopUrl'] }}" class="btn custom-btn dark-blue w-100">
+                        {{ $buyNowText }}
+                    </a>
+                </div>
             </div>
         </div>
         @endforeach

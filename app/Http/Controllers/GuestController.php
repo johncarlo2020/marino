@@ -15,6 +15,17 @@ class GuestController extends Controller
         return view('welcome');
     }
 
+    public function aboutUs()
+    {
+        $this->sharedData();
+        return view('aboutus');
+    }
+
+    public function products() {
+        $this->sharedData();
+        return view('products');
+    }
+
     public function sharedData()
     {
         //to-do replace this data base on admin
@@ -39,18 +50,18 @@ class GuestController extends Controller
 
         $navLinks = [
             [
-                'linkUrl' => '#',
+                'linkUrl' =>  route('home'),
                 'page' => 'Home',
                 'child' => false,
             ],
             [
-                'linkUrl' => '#',
+                'linkUrl' => route('products'),
                 'page' => 'Products',
-                'child' => true,
+                'child' => false,
                 'children' => [
                     [
                         'linkUrl' => '#',
-                        'page' => 'Product 1',
+                        'page' => 'SIM',
                     ],
                     [
                         'linkUrl' => '#',
@@ -79,7 +90,7 @@ class GuestController extends Controller
                 'child' => false,
             ],
             [
-                'linkUrl' => '#',
+                'linkUrl' => route('about-us'),
                 'page' => 'About us',
                 'child' => false,
             ],
@@ -168,97 +179,216 @@ class GuestController extends Controller
         $productSectionDescription = 'We offer wide range of international simcards and data packages that are available to ensure seamless connectivity across different countries and regions. Our company also offers 24/7 customer support to assist users with any technical issues or inquiries they may have';
 
         $products = Products::get();
-        // $products = [
-        //     [
-        //         'image' => asset('images/icons/customer-service.svg'),
-        //         'product-type' => 'WORLDWIDE POCKET WIFI',
-        //         'product-name' => 'Pokefi',
-        //         'product-details' => [
-        //             'FREE 5GB (No expiry)',
-        //             'FREE you from changing sim hassles',
-        //             'Worldwide Coverage (100+ countries)',
-        //             'Easy & Ready to use',
-        //         ],
-        //         'reaload' => 'RE-LOADABLE',
-        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-        //         'price' => 299
-        //     ],
-        //     [
-        //         'image' => asset('images/icons/customer-service.svg'),
-        //         'product-type' => 'WORLDWIDE POCKET WIFI',
-        //         'product-name' => 'Pokefi',
-        //         'product-details' => [
-        //             'FREE 5GB (No expiry)',
-        //             'FREE you from changing sim hassles',
-        //             'Worldwide Coverage (100+ countries)',
-        //             'Easy & Ready to use',
-        //         ],
-        //         'reaload' => 'RE-LOADABLE',
-        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-        //         'price' => 299
-        //     ],
-        //     [
-        //         'image' => asset('images/icons/customer-service.svg'),
-        //         'product-type' => 'WORLDWIDE POCKET WIFI',
-        //         'product-name' => 'Pokefi',
-        //         'product-details' => [
-        //             'FREE 5GB (No expiry)',
-        //             'FREE you from changing sim hassles',
-        //             'Worldwide Coverage (100+ countries)',
-        //             'Easy & Ready to use',
-        //         ],
-        //         'reaload' => 'RE-LOADABLE',
-        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-        //         'price' => 299
-        //     ],
-        //     [
-        //         'image' => asset('images/icons/customer-service.svg'),
-        //         'product-type' => 'WORLDWIDE POCKET WIFI',
-        //         'product-name' => 'Pokefi',
-        //         'product-details' => [
-        //             'FREE 5GB (No expiry)',
-        //             'FREE you from changing sim hassles',
-        //             'Worldwide Coverage (100+ countries)',
-        //             'Easy & Ready to use',
-        //         ],
-        //         'reaload' => 'RE-LOADABLE',
-        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-        //         'price' => 299
-        //     ],
-        //     [
-        //         'image' => asset('images/icons/customer-service.svg'),
-        //         'product-type' => 'WORLDWIDE POCKET WIFI',
-        //         'product-name' => 'Pokefi',
-        //         'product-details' => [
-        //             'FREE 5GB (No expiry)',
-        //             'FREE you from changing sim hassles',
-        //             'Worldwide Coverage (100+ countries)',
-        //             'Easy & Ready to use',
-        //         ],
-        //         'reaload' => 'RE-LOADABLE',
-        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-        //         'price' => 299
-        //     ],
-        //     [
-        //         'image' => asset('images/icons/customer-service.svg'),
-        //         'product-type' => 'WORLDWIDE POCKET WIFI',
-        //         'product-name' => 'Pokefi',
-        //         'product-details' => [
-        //             'FREE 5GB (No expiry)',
-        //             'FREE you from changing sim hassles',
-        //             'Worldwide Coverage (100+ countries)',
-        //             'Easy & Ready to use',
-        //         ],
-        //         'reaload' => 'RE-LOADABLE',
-        //         'shopUrl' => 'https://getbootstrap.com/docs/5.2/components/card/#about',
-        //         'price' => 299
-        //     ],
-
-        // ];
 
         $testimonialHeading = 'Our Clients';
 
+        $aboutUsHeading = 'About Us';
+        $ourBrands = 'Our Brands';
+
+        $aboutUsContent1 = [
+            'title' => $aboutUsHeading,
+            'content' => [
+                [
+                    'text' => 'By establishing partnerships with major network providers globally, our company aims to create a comprehensive service that offers reliable and high-speed internet access to seafarers and travelers, enabling them to stay connected with their loved ones and access important information while on the go. This initiative not only caters to the growing demand for connectivity at sea and in remote areas but also positions us as a leading player in providing data sim cards worldwide.'
+                ],
+            ]
+        ];
+
+        $aboutUsContent2 = [
+            'title' => $ourBrands,
+            'content' => [
+                [
+                    'text' => 'We offer wide range of international sim cards and data packages that are available to ensure seamless connectivity across different countries and regions. Our company also offers 24/7 customer support to assist users with any technical issues or inquiries they may have. Our Brands PRODUCTS OUR By establishing partnerships with major network providers globally, our company aims to create a comprehensive service that offers reliable and high-speed internet access to seafarers and travelers, enabling them to stay connected with their loved ones and access important information while on the go.'
+                ],
+                [
+                    'text' => 'This initiative not only caters to the growing demand for connectivity at sea and in remote areas but also positions us as a leading player in providing data sim cards worldwide. International Simcard and Data 3uk AIS Talktiko Talk2all Pokefi We also offer top up now, pay later, further enhancing their experience with our services'
+                ],
+            ]
+        ];
+
+        $brands = [
+            [
+                'imageUrl' => asset('images/icons/pcup.svg')
+            ],
+            [
+                'imageUrl' => asset('images/icons/pcup.svg')
+            ],
+            [
+                'imageUrl' => asset('images/icons/pcup.svg')
+            ],
+            [
+                'imageUrl' => asset('images/icons/pcup.svg')
+            ],
+        ];
+
+        $aboutUsImg = asset('images/manAtSea.png');
+
         $testimonials = Testimonial::get();
+
+        $productsList = [
+                [
+                    'image' => asset('images/products.png'),
+                    'name' => 'TALKTIKO SIM',
+                    'price' => 299,
+                    'type' => 'SIM',
+                    'link' => '#',
+                    'countries' => 'Australia 5G, Bahrain 5G, Bangladesh, Brunei, Cambodia, China 5G, Georgia, Guam, Hong Kong 5G, India, Indonesia 5G, Israel 5G, Japan 5G, Jordan, Kazakhstan, Kuwait 5G, Laos, Macau, Malaysia, Mongolia, Myanmar (New), Nepal, Oman 5G, Pakistan, Philippines 5G, Qatar 5G, Singapore 5G, South Korea 5G, Sri Lanka, Taiwan, Tibet 5G, Uzbekistan, Vietnam 5G, Thailand 5G',
+                    'notes' => 'User reported poor connection
+                                AIS Roaming Partners by country listed here.
+                                For India: Not Available in Diskit,Gulmarg, Jammu,Kargil, Kashmir, Katra, Leh, Plan Bandipora and Srinagar. (Update Sep 10,2022)
+                                The use of 4G or 3G depends on the capabilities of the overseas service provider network.
+                                1 Global SIM can be used in one or many countries
+                                AIS will roam on its partner networks.',
+                    'accordion' => [
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'Packages',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'how to top up',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'mode of payment',
+                            'visibility' => true
+                        ],
+                    ]
+
+                ],
+                [
+                    'image' => asset('images/products.png'),
+                    'name' => 'TALKTIKO SIM',
+                    'price' => 299,
+                    'type' => 'SIM',
+                    'link' => '#',
+                    'countries' => 'Australia 5G, Bahrain 5G, Bangladesh, Brunei, Cambodia, China 5G, Georgia, Guam, Hong Kong 5G, India, Indonesia 5G, Israel 5G, Japan 5G, Jordan, Kazakhstan, Kuwait 5G, Laos, Macau, Malaysia, Mongolia, Myanmar (New), Nepal, Oman 5G, Pakistan, Philippines 5G, Qatar 5G, Singapore 5G, South Korea 5G, Sri Lanka, Taiwan, Tibet 5G, Uzbekistan, Vietnam 5G, Thailand 5G',
+                    'notes' => 'User reported poor connection
+                                AIS Roaming Partners by country listed here.
+                                For India: Not Available in Diskit,Gulmarg, Jammu,Kargil, Kashmir, Katra, Leh, Plan Bandipora and Srinagar. (Update Sep 10,2022)
+                                The use of 4G or 3G depends on the capabilities of the overseas service provider network.
+                                1 Global SIM can be used in one or many countries
+                                AIS will roam on its partner networks.',
+                    'accordion' => [
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'Packages',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'how to top up',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'mode of payment',
+                            'visibility' => true
+                        ],
+                    ]
+
+                ],
+                [
+                    'image' => asset('images/products.png'),
+                    'name' => 'TALKTIKO SIM',
+                    'price' => 299,
+                    'type' => 'SIM',
+                    'link' => '#',
+                    'countries' => 'Australia 5G, Bahrain 5G, Bangladesh, Brunei, Cambodia, China 5G, Georgia, Guam, Hong Kong 5G, India, Indonesia 5G, Israel 5G, Japan 5G, Jordan, Kazakhstan, Kuwait 5G, Laos, Macau, Malaysia, Mongolia, Myanmar (New), Nepal, Oman 5G, Pakistan, Philippines 5G, Qatar 5G, Singapore 5G, South Korea 5G, Sri Lanka, Taiwan, Tibet 5G, Uzbekistan, Vietnam 5G, Thailand 5G',
+                    'notes' => 'User reported poor connection
+                                AIS Roaming Partners by country listed here.
+                                For India: Not Available in Diskit,Gulmarg, Jammu,Kargil, Kashmir, Katra, Leh, Plan Bandipora and Srinagar. (Update Sep 10,2022)
+                                The use of 4G or 3G depends on the capabilities of the overseas service provider network.
+                                1 Global SIM can be used in one or many countries
+                                AIS will roam on its partner networks.',
+                    'accordion' => [
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'Packages',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'how to top up',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'mode of payment',
+                            'visibility' => true
+                        ],
+                    ]
+
+                ],
+                [
+                    'image' => asset('images/products.png'),
+                    'name' => 'TALKTIKO SIM',
+                    'price' => 299,
+                    'type' => 'SIM',
+                    'link' => '#',
+                    'countries' => 'Australia 5G, Bahrain 5G, Bangladesh, Brunei, Cambodia, China 5G, Georgia, Guam, Hong Kong 5G, India, Indonesia 5G, Israel 5G, Japan 5G, Jordan, Kazakhstan, Kuwait 5G, Laos, Macau, Malaysia, Mongolia, Myanmar (New), Nepal, Oman 5G, Pakistan, Philippines 5G, Qatar 5G, Singapore 5G, South Korea 5G, Sri Lanka, Taiwan, Tibet 5G, Uzbekistan, Vietnam 5G, Thailand 5G',
+                    'notes' => 'User reported poor connection
+                                AIS Roaming Partners by country listed here.
+                                For India: Not Available in Diskit,Gulmarg, Jammu,Kargil, Kashmir, Katra, Leh, Plan Bandipora and Srinagar. (Update Sep 10,2022)
+                                The use of 4G or 3G depends on the capabilities of the overseas service provider network.
+                                1 Global SIM can be used in one or many countries
+                                AIS will roam on its partner networks.',
+                    'accordion' => [
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'Packages',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'how to top up',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'mode of payment',
+                            'visibility' => true
+                        ],
+                    ]
+
+                ],
+                [
+                    'image' => asset('images/products.png'),
+                    'name' => 'TALKTIKO SIM',
+                    'price' => 299,
+                    'type' => 'SIM',
+                    'link' => '#',
+                    'countries' => 'Australia 5G, Bahrain 5G, Bangladesh, Brunei, Cambodia, China 5G, Georgia, Guam, Hong Kong 5G, India, Indonesia 5G, Israel 5G, Japan 5G, Jordan, Kazakhstan, Kuwait 5G, Laos, Macau, Malaysia, Mongolia, Myanmar (New), Nepal, Oman 5G, Pakistan, Philippines 5G, Qatar 5G, Singapore 5G, South Korea 5G, Sri Lanka, Taiwan, Tibet 5G, Uzbekistan, Vietnam 5G, Thailand 5G',
+                    'notes' => 'User reported poor connection
+                                AIS Roaming Partners by country listed here.
+                                For India: Not Available in Diskit,Gulmarg, Jammu,Kargil, Kashmir, Katra, Leh, Plan Bandipora and Srinagar. (Update Sep 10,2022)
+                                The use of 4G or 3G depends on the capabilities of the overseas service provider network.
+                                1 Global SIM can be used in one or many countries
+                                AIS will roam on its partner networks.',
+                    'accordion' => [
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'Packages',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'how to top up',
+                            'visibility' => true
+                        ],
+                        [
+                            'content' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos',
+                            'title' => 'mode of payment',
+                            'visibility' => true
+                        ],
+                    ]
+
+                ],
+
+
+            ];
 
         view()->share([
             'iconData' => $iconData,
@@ -275,7 +405,13 @@ class GuestController extends Controller
             'productSectionDescription' => $productSectionDescription,
             'products' => $products,
             'testimonialHeading' => $testimonialHeading,
-            'testimonials' => $testimonials
+            'testimonials' => $testimonials,
+            'aboutUsContent1' => $aboutUsContent1,
+            'aboutUsImg' => $aboutUsImg,
+            'ourBrands' => $ourBrands,
+            'aboutUsContent2' => $aboutUsContent2,
+            'brands' => $brands,
+            'productsList' => $productsList
         ]);
 
     }

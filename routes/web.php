@@ -14,4 +14,7 @@ use App\Http\Controllers\GuestController;
 |
 */
 
-Route::get('/', [GuestController::class, 'index']);
+Route::get('/', [GuestController::class, 'index'])->name('home');
+Route::get('/about-us', [GuestController::class, 'aboutUs'])->name('about-us');
+Route::get('/products', [GuestController::class, 'products'])->name('products');
+
