@@ -12,11 +12,12 @@
 </div>
 
 <div class="clients-container container">
-    @foreach ($testimonialList2 as $testimonial)
+    @foreach ($testimonials as $testimonial)
     <div class="item">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-5">
-                <img src="{{ $testimonial['image'] }}" alt="">
+                <img  src="{{asset('storage/'.$testimonial['image'])}}" alt="">
+               
             </div>
             <div class="col-12 col-md-12 col-lg-6 mt-3 mt-lg-0">
                 <p class="clients-name">{{ $testimonial['name'] }}</p>

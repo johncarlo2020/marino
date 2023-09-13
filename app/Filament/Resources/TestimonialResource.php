@@ -23,6 +23,12 @@ class TestimonialResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(255),
+                Forms\Components\TextInput::make('position')
+                ->required()
+                ->maxLength(255),
                 Forms\Components\TextInput::make('message')
                 ->required()
                 ->maxLength(255),
@@ -46,6 +52,8 @@ class TestimonialResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('position'),
                 Tables\Columns\TextColumn::make('message'),
                 Tables\Columns\TextColumn::make('rating'),
                 Tables\Columns\ImageColumn::make('image'),

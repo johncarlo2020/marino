@@ -189,7 +189,43 @@ class GuestController extends Controller
             'title' => $aboutUsHeading,
             'content' => [
                 [
-                    'text' => 'By establishing partnerships with major network providers globally, our company aims to create a comprehensive service that offers reliable and high-speed internet access to seafarers and travelers, enabling them to stay connected with their loved ones and access important information while on the go. This initiative not only caters to the growing demand for connectivity at sea and in remote areas but also positions us as a leading player in providing data sim cards worldwide.'
+                    'text' => "Marino Data Top Up Ph Corp., started on February 28, 2019 as
+                    an online seller who offers data top up to all seafarers. Since its
+                    inception, the company has rapidly gained popularity as an online
+                    seller. With a strong focus on customer satisfaction, the company has
+                    successfully carved a niche for itself in a competitive market. At first, it
+                    was only for the personal use of my husband since he is also a seafarer,
+                    but as word spread about our fast and convenience service of top up to
+                    seafarers, demand began to grow exponentially. Recognizing the
+                    potential for expansion, the company decided to offer its services to a
+                    wider audience, catering not only to seafarers but also to individuals
+                    and businesses in need of reliable data top-up solutions. This strategic
+                    decision further propelled Marino Data Top Up Ph Corp.'s growth and
+                    solidified its position as a trusted provider of top up and sim cards in
+                    the online selling industry. "
+                ],
+                [
+                    'text' => "As a company expansion we decided to get an office and register it as a
+                    corporation to establish a more formal and professional presence in the
+                    market. This allowed us to better serve our growing customer base and
+                    build stronger relationships with our partners and supplier's.
+                    Additionally, becoming a registered corporation vided us with legal
+                    protection and enhanced credibility positioning us as a reputable player
+                    in the industry. This also opens up opportunities for us to expand our
+                    reach and establish strategic partnerships, enabling us to offer even
+                    more competitive products and services in the future. "
+                ],[
+                    'text' => "We are now selling SIM cards from Thailand, United Kingdom, China
+                    and Hongkong even a pocket Wi-Fi from Hongkong that is Pokefi
+                    which allows us to cater to a diverse customer base and tap into
+                    different markets. We also offer top up for almost all sim cards
+                    worldwide and planning to have partnership to the biggest and best
+                    internet provider in the world. This expansion not only increases our
+                    revenue potential but also enhances our reputation as a reliable
+                    provider of international sim cards and top up. Additionally, by
+                    offering SIM cards from multiple countries, we can provide customers
+                    with more options and flexibility in choosing the best plan that suits
+                    their needs while traveling or staying abroad. "
                 ],
             ]
         ];

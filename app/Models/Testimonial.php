@@ -13,6 +13,8 @@ class Testimonial extends Model
         'message',
         'rating',
         'image',
+        'name',
+        'position'
 
     ];
 }
