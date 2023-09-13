@@ -29,6 +29,7 @@ class ProductsResource extends Resource
                     ->required()
                     ->maxLength(255),
                     Forms\Components\FileUpload::make('image')
+                    ->maxSize(10024)
                     ->required()
                     ->preserveFilenames()
                     ->image(),
@@ -45,12 +46,29 @@ class ProductsResource extends Resource
                     Forms\Components\TextInput::make('shopUrl')
                     ->required()
                     ->maxLength(255),
-                    Forms\Components\Toggle::make('isReaload'),
+                    Forms\Components\Toggle::make('isReaload')->inline(false),
                 ])->columns(3),
                 Forms\Components\Grid::make()
                 ->schema([
                     Forms\Components\RichEditor::make('details'),
                 ])->columns(1),
+                Forms\Components\Grid::make()
+                ->schema([
+                    Forms\Components\TextInput::make('countries')
+                    ->required(), 
+                    Forms\Components\TextInput::make('notes')
+                    ->required(), 
+                ])->columns(2),
+                Forms\Components\Grid::make()
+                ->schema([
+                    Forms\Components\TextInput::make('packages')
+                    ->required(), 
+                    Forms\Components\TextInput::make('top_up')
+                    ->required(), 
+                    Forms\Components\TextInput::make('mop')
+                    ->required(), 
+                ])->columns(3),
+                
                 
             ]);
     }

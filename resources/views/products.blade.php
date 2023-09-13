@@ -11,19 +11,20 @@
     </p>
 </div>
 <div class="container product-list-details my-5">
-    @foreach ($productsList as $set => $product)
+    @foreach ($products as $set => $product)
     <div class="item border p-3 p-lg-5 rounded">
         <div class="row">
             <div class="col-12 col-md-12 col-lg-5">
                 <div class="  mb-4 mb-md-4 mb-lg-0">
-                    <img src="{{ $product['image'] }}" alt="">
+                    <img  src="{{asset('storage/'.$product['image'])}}" alt="">
+                   
                 </div>
             </div>
             <div class="col-12 col-md- col-lg-7">
                 <h2 class="fw-bold product-name">{{ $product['name'] }} <span class="bg-primary rounded-pill fw-normal px-3 py-1 fs-6 text-white">{{ $product['type'] }}</span></h2>
                 <div class="d-lg-flex d-block gap-3 align-items-center my-3">
                     <h3 class="fw-bold mb-3 mb-md-0">&#8369; {{ $product['price'] }} only</h3>
-                    <a href="{{ $product['link'] }}" class="btn custom-btn outline-gold rounded-pill">
+                    <a href="{{ $product['shopUrl'] }}" class="btn custom-btn outline-gold rounded-pill">
                         {{ $buyNowText }}
                     </a>
                 </div>
@@ -32,22 +33,45 @@
                 <p class="mb-2 fw-bold">Notes:</p>
                 <p>{{ $product['notes'] }}</p>
                 <div class="accordion mt-4" id="accordion{{$set}}">
-                    @foreach ($product['accordion'] as $index => $accordionItem)
-                        @if ($accordionItem['visibility'])
-                            <div class="accordion-item" id="heading{{ $index }}">
+                   
+                            <div class="accordion-item" id="heading1">
                                 <h2 class="accordion-header" >
-                                    <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}" aria-expanded="true" aria-controls="collapse{{ $index }}">
-                                        {{ $accordionItem['title'] }}
+                                    <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$product['id']}}1" aria-expanded="true" aria-controls="collapse{{$product['id']}}1">
+                                        Packages
                                     </button>
                                 </h2>
-                                <div id="collapse{{ $index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $index }}" data-bs-parent="#accordion{{$set}}">
+                                <div id="collapse{{$product['id']}}1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordion{{$set}}">
                                     <div class="accordion-body">
-                                        {{ $accordionItem['content'] }}
+                                        {{ $product['packages'] }}
                                     </div>
                                 </div>
                             </div>
-                        @endif
-                    @endforeach
+
+                            <div class="accordion-item" id="heading2">
+                                <h2 class="accordion-header" >
+                                    <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$product['id']}}2" aria-expanded="true" aria-controls="collapse{{$product['id']}}2">
+                                        How to Top top_upp
+                                    </button>
+                                </h2>
+                                <div id="collapse{{$product['id']}}2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion{{$set}}">
+                                    <div class="accordion-body">
+                                        {{ $product['top_up'] }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item" id="heading3">
+                                <h2 class="accordion-header" >
+                                    <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$product['id']}}3" aria-expanded="true" aria-controls="collapse{{$product['id']}}3">
+                                        Mode of Payment
+                                    </button>
+                                </h2>
+                                <div id="collapse{{$product['id']}}3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion{{$set}}">
+                                    <div class="accordion-body">
+                                        {{ $product['mop'] }}
+                                    </div>
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>

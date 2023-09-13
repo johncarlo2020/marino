@@ -17,5 +17,10 @@ class Products extends Model
         'price',
         'isReaload',
         'shopUrl',
+        'countries',
+        'notes',
+        'packages',
+        'top_up',
+        'mop',
     ];
 }
