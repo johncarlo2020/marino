@@ -61,12 +61,9 @@ class ProductsResource extends Resource
                 ])->columns(2),
                 Forms\Components\Grid::make()
                 ->schema([
-                    Forms\Components\TextInput::make('packages')
-                    ->required(), 
-                    Forms\Components\TextInput::make('top_up')
-                    ->required(), 
-                    Forms\Components\TextInput::make('mop')
-                    ->required(), 
+                    Forms\Components\TextInput::make('packages'), 
+                    Forms\Components\TextInput::make('top_up'), 
+                    Forms\Components\TextInput::make('mop'), 
                 ])->columns(3),
                 
                 
