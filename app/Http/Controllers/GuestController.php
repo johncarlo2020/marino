@@ -261,6 +261,7 @@ class GuestController extends Controller
 
         $testimonials = Testimonial::get();
 
+
         $productsList = [
                 [
                     'image' => asset('images/products.png'),
@@ -498,7 +499,7 @@ class GuestController extends Controller
             ]
         ];
         $vission = [
-            'title' => 'Our vission',
+            'title' => 'Our vision',
             'content' => [
                 [
                     'text' => "Our company wants to connect all big and fast internet companies for all seafarers and travelers worldwide."
