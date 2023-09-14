@@ -833,6 +833,11 @@ body {
 .images-credited {
     margin-top: 30px;
     padding: 0 40px;
+
+    @media (max-width: 575.98px) {
+        padding: 0 10px;
+    }
+
     .image-cred{
         width: 25%;
         height: 80px;

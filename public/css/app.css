@@ -13033,6 +13033,11 @@ body p {
   margin-top: 30px;
   padding: 0 40px;
 }
+@media (max-width: 575.98px) {
+  .images-credited {
+    padding: 0 10px;
+  }
+}
 .images-credited .image-cred {
   width: 25%;
   height: 80px;
