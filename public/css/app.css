@@ -12856,6 +12856,8 @@ body p {
 @media (max-width: 575.98px) {
   .brands-container {
     width: 90%;
+    margin-top: 20px;
+    padding: 0;
   }
 }
 .brands-container .item-list {
