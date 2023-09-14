@@ -168,6 +168,11 @@ body {
       .navbar {
         background-color: $blue-700;
 
+        #offcanvasNavbar {
+            background-color:$blue-700;
+            color: $link-color;
+        }
+
         .navbar-brand{
             font-size: $font-small;
         }

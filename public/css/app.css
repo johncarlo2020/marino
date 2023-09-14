@@ -12425,6 +12425,10 @@ body p {
 .main-navbar .navbar {
   background-color: #15133C;
 }
+.main-navbar .navbar #offcanvasNavbar {
+  background-color: #15133C;
+  color: #bdbdbd;
+}
 .main-navbar .navbar .navbar-brand {
   font-size: 14px;
 }
