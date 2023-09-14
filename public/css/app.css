@@ -12711,7 +12711,7 @@ body p {
 .product-container .product-slide .card .details .product-description {
   text-align: left;
   font-size: 14px;
-  line-height: 3rem;
+  line-height: 2;
   margin-bottom: 20px;
 }
 .product-container .product-slide .card .details .price {
