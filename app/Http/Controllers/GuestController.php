@@ -54,7 +54,7 @@ class GuestController extends Controller
             ],
         ];
 
-        $companyName = 'Marino Data Top Up Corp';
+        $companyName = 'Marino Data Top Up Ph Corp';
 
         $missionText =  'To help Filipino seafarers and travelers connected to their love ones in an easy and quick service for a very affordable price';
 
@@ -244,20 +244,20 @@ class GuestController extends Controller
 
         $brands = [
             [
-                'imageUrl' => asset('images/icons/pcup.svg')
+                'imageUrl' => asset('images/brand1.png')
             ],
             [
-                'imageUrl' => asset('images/icons/pcup.svg')
+                'imageUrl' => asset('images/brand2.png')
             ],
             [
-                'imageUrl' => asset('images/icons/pcup.svg')
+                'imageUrl' => asset('images/brand3.png')
             ],
             [
-                'imageUrl' => asset('images/icons/pcup.svg')
+                'imageUrl' => asset('images/brand4.png')
             ],
         ];
 
-        $aboutUsImg = asset('images/manAtSea.png');
+        $aboutUsImg = asset('images/building.png');
 
         $testimonials = Testimonial::get();
 
@@ -479,6 +479,52 @@ class GuestController extends Controller
             ];
 
 
+        $topUP = asset('images/topup.png');
+        $topUPcontent = [
+            'title' => 'Available SIM top up/load',
+            'content' => [
+                [
+                    'text' => "We take pride in offering a comprehensive range of top-up services to cater to all your mobile communication needs. In addition to our primary services, we extend our support to provide various load and top-up options for different mobile SIM cards. If you require assistance with your SIM card load request, we are just a call or message away. Feel free to reach out to us, and our dedicated team will be more than happy to guide you through the process and ensure your mobile connectivity is seamlessly maintained."
+                ],
+            ]
+        ];
+        $fbLink = 'https://www.facebook.com/floramae.banas?mibextid=LQQJ4d';
+        $mission = [
+            'title' => 'Our mission',
+            'content' => [
+                [
+                    'text' => "To help Filipino seafarers and travelers connected to their loveones in an easy and quick service for a very affordable price."
+                ],
+            ]
+        ];
+        $vission = [
+            'title' => 'Our vission',
+            'content' => [
+                [
+                    'text' => "Our company wants to connect all big and fast internet companies for all seafarers and travelers worldwide."
+                ],
+            ]
+        ];
+
+        $creditedLogo = [
+            [
+                'imageUrl' => asset('images/logo1.png')
+            ],
+            [
+                'imageUrl' => asset('images/logo2.png')
+            ],
+            [
+                'imageUrl' => asset('images/logo3.png')
+            ],
+            [
+                'imageUrl' => asset('images/logo4.png')
+            ],
+        ];
+
+
+
+
+
         view()->share([
             'iconData' => $iconData,
             'companyName' => $companyName,
@@ -507,7 +553,13 @@ class GuestController extends Controller
             'contactHeading' => $contactHeading,
             'contactHeadingDescription' => $contactHeadingDescription,
             'contactContent1' => $contactContent1,
-            'contactUsImg' => $contactUsImg
+            'contactUsImg' => $contactUsImg,
+            'topUP' => $topUP,
+            'topUPcontent' => $topUPcontent,
+            'fbLink' => $fbLink,
+            'mission' => $mission,
+            'vission' => $vission,
+            'creditedLogo' => $creditedLogo
         ]);
 
     }

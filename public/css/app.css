@@ -12278,8 +12278,13 @@ body {
 body p {
   margin: 0;
 }
-
 @media (max-width: 575.98px) {
+  body h1 {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 991.98px) {
   html, body {
     overflow-x: hidden;
   }
@@ -12964,6 +12969,86 @@ body p {
   height: 20px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.top-up-loads {
+  position: relative;
+  text-align: left;
+}
+.top-up-loads .image-container::after {
+  display: none;
+}
+.top-up-loads .image-container img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.top-up-loads .btn {
+  position: absolute;
+  bottom: 90px;
+  right: calc(50% - 176px);
+}
+@media (max-width: 1200px) {
+  .top-up-loads .btn {
+    position: relative;
+    bottom: -20px;
+    left: calc(50% - 75px);
+  }
+}
+@media (max-width: 991px) {
+  .top-up-loads .btn {
+    position: relative;
+    bottom: -20px;
+    left: calc(50% - 75px);
+  }
+}
+@media (max-width: 575.98px) {
+  .top-up-loads .btn {
+    left: 10px;
+  }
+}
+
+.about-us-with-image .main-container, .mission-vission .main-container {
+  width: 100%;
+}
+.about-us-with-image .main-container:not(:last-child) .title-with-paragraph, .mission-vission .main-container:not(:last-child) .title-with-paragraph {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.about-us-with-image .title-with-paragraph p:last-child {
+  padding-bottom: 40px;
+}
+.about-us-with-image .title-with-paragraph p:last-child::after {
+  left: calc(50% - 35px);
+}
+
+.mission-vission .image-container {
+  height: 300px;
+}
+.mission-vission .image-container::after {
+  display: none;
+}
+
+.images-credited {
+  margin-top: 30px;
+  padding: 0 40px;
+}
+.images-credited .image-cred {
+  width: 25%;
+  height: 80px;
+}
+.images-credited .image-cred .item {
+  width: 70px;
+  height: 70px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 0 auto;
+}
+@media (max-width: 575.98px) {
+  .images-credited .image-cred .item {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 

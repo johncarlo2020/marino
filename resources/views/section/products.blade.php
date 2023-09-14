@@ -33,6 +33,19 @@
         @endforeach
     </div>
 
-
+    <div class="top-up-loads mb-5">
+        <div class="row">
+            <div class="row ">
+                @include('components.image',['image' => $topUP ])
+                @include('components.titleWithParagraph', [
+                    'title' => $topUPcontent['title'],
+                    'content' => $topUPcontent['content']
+                ])
+                 <a href="{{ $fbLink }}" class="btn custom-btn outline-gold ">
+                    {{ $buyNowText }}
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
 
