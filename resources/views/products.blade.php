@@ -42,7 +42,7 @@
                                 </h2>
                                 <div id="collapse{{$product['id']}}1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordion{{$set}}">
                                     <div class="accordion-body">
-                                        {{ $product['packages'] }}
+                                        {!! $product['packages'] !!}
                                     </div>
                                 </div>
                             </div>

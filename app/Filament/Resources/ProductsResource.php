@@ -61,10 +61,10 @@ class ProductsResource extends Resource
                 ])->columns(2),
                 Forms\Components\Grid::make()
                 ->schema([
-                    Forms\Components\TextInput::make('packages'), 
-                    Forms\Components\TextInput::make('top_up')->label('How To Top Up'), 
+                    Forms\Components\RichEditor::make('packages'), 
+                    Forms\Components\RichEditor::make('top_up')->label('How To Top Up'), 
                     Forms\Components\TextInput::make('mop')->label('Mode Of Payment'), 
-                ])->columns(3),
+                ])->columns(1),
                 
                 
             ]);
