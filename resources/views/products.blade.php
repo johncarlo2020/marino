@@ -50,12 +50,12 @@
                             <div class="accordion-item" id="heading2">
                                 <h2 class="accordion-header" >
                                     <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$product['id']}}2" aria-expanded="true" aria-controls="collapse{{$product['id']}}2">
-                                        How to Top top_upp
+                                        How to Top top_up
                                     </button>
                                 </h2>
                                 <div id="collapse{{$product['id']}}2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion{{$set}}">
                                     <div class="accordion-body">
-                                        {{ $product['top_up'] }}
+                                        {!! $product['top_up'] !!}
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                 </h2>
                                 <div id="collapse{{$product['id']}}3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion{{$set}}">
                                     <div class="accordion-body">
-                                        {{ $product['mop'] }}
+                                        {!! $product['mop'] !!}
                                     </div>
                                 </div>
                             </div>

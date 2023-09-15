@@ -63,7 +63,7 @@ class ProductsResource extends Resource
                 ->schema([
                     Forms\Components\RichEditor::make('packages'), 
                     Forms\Components\RichEditor::make('top_up')->label('How To Top Up'), 
-                    Forms\Components\TextInput::make('mop')->label('Mode Of Payment'), 
+                    Forms\Components\RichEditor::make('mop')->label('Mode Of Payment'), 
                 ])->columns(1),
                 
                 
