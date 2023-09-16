@@ -12693,7 +12693,8 @@ body p {
 }
 .product-container .product-slide .card .details {
   padding: 30px;
-  min-height: 550px;
+  min-height: 600px;
+  padding-bottom: 100px;
   position: relative;
 }
 .product-container .product-slide .card .details .product-type {
