@@ -7,7 +7,7 @@
     <div class="container  page-title-container">
     </div>
 
-    <section class="about-us-with-image contact-second ">
+    <section class="contact-second ">
         <div class="container p-2">
             <div class="row ">
                 @include('components.image', ['image' => $contactUsImg])
@@ -32,24 +32,6 @@
                             </div>
                         @endforeach
                     </div>
-                </div>
-                <h3 class="fw-bold text-center mb-4">Contact Form</h3>
-                <div class="contact-form border rounded p-5">
-                    <form action="" method="POST">
-                        <div class="form-group mb-2">
-                            <label class="mb-2" for="name">Name:</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
-                        </div>
-                        <div class="form-group mb-2">
-                            <label class="mb-2" for="email">Email:</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group mb-2">
-                            <label class="mb-2" for="message">Message:</label>
-                            <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn custom-btn gold w-100 mt-5">Submit</button>
-                    </form>
                 </div>
             </div>
     </section>

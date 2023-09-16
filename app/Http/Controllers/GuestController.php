@@ -471,7 +471,7 @@ class GuestController extends Controller
             $contactHeadingDescription = '';
             $contactUsImg = asset('images/emailpic.png');
             $contactContent1 = [
-                'title' => 'Have questions? Shoot us an email.',
+                'title' => 'Have questions? Send us a message on facebook.',
                 'content' => [
                     [
                         'text' => 'By establishing partnerships with major network providers globally, our company aims to create a comprehensive service that offers reliable and high-speed internet access to seafarers and travelers, enabling them to stay connected with their loved ones and access important information while on the go. This initiative not only caters to the growing demand for connectivity at sea and in remote areas but also positions us as a leading player in providing data sim cards worldwide.'
