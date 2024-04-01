@@ -72,7 +72,7 @@ class TransactionsRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                ->after(function (array $data) {
+                ->before(function (array $data) {
                     $currentDate = Carbon::now();
                     $dateIn30Days = $currentDate->addDays(30);
                     if($data['mop'] == 'Credit'){

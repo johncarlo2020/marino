@@ -21,7 +21,7 @@ class StatsOverview extends BaseWidget
                 $response = $client->get('https://thailandtopup.com/api/v2/accountbalance', [
                     'headers' => [
                         'Authorization' => 'Basic ' . base64_encode($authorizationToken . ':'),
-                        'Accept' => 'application/json', // Adjust based on API requirements
+                        'Accept' => 'application/json', 
                     ],
                 ]);
 
