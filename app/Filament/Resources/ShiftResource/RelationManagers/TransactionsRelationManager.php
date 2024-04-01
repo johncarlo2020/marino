@@ -9,7 +9,8 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-
+use App\Models\Credit;
+use Carbon\Carbon;
 class TransactionsRelationManager extends RelationManager
 {
     protected static string $relationship = 'transactions';
@@ -70,11 +71,26 @@ class TransactionsRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()
+                ->after(function (array $data) {
+                    $currentDate = Carbon::now();
+                    $dateIn30Days = $currentDate->addDays(30);
+                    if($data['mop'] == 'Credit'){
+                        $credit = new Credit;
+                        $credit->name = $data['name'];
+                        $credit->email = $data['notes'];
+                        $credit->number = $data['number'];
+                        $credit->amount = $data['php_amount'];
+                        $credit->due = $dateIn30Days;
+                        $credit->status = 'Unpaid';
+                        $credit->save();
+                    }
+                }),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
+                
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
